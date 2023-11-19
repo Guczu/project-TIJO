@@ -25,16 +25,23 @@ const options = {
             }
         ]
     },
-    apis: ['./app/REST/user.endpoints.js'],
+    apis: [
+        './app/REST/user.endpoint.js',
+        './app/REST/product.endpoint.js',
+        './app/REST/payments.endpoint.js',
+        './app/REST/orders.endpoints.js',
+        './app/REST/newsletter.endpoints.js',
+        './app/REST/address.endpoint.js',
+    ],
 };
 
 const swaggerSpec = swaggerJsdoc(options)
 
 function swaggerDocs(app, port) {
-    app.use('docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec))
+    app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec))
 
     app.get('docs.json', (req, res) => {
-        res.setHeader('Content-Type', 'appplication/json')
+        res.setHeader('Content-Type', 'application/json')
         res.send(swaggerSpec);
     })
 }
