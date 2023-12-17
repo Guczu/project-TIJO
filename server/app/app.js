@@ -30,7 +30,9 @@ mongoose.connect(config.databaseUrl, { useNewUrlParser: true, useUnifiedTopology
 
 routes(app);
 
-app.listen(config.port, function () {
+const server = app.listen(config.port, function () {
     console.info(`Server is running at ${config.port}`)
     swaggerDocs(app);
 });
+
+export default server;
