@@ -21,7 +21,7 @@ JWT_SECRET=klucz do jwt<br />
 STRIPE_SECRET_KEY=klucz do stripe<br />
 
 ## Uruchomienie testów jednostkowych i integracyjnych<br />
-W folderze /client i /server -> npm test
+W folderze /client i /server -> npm test <br />
 Niektóre testy wymagają podanego aktualnego ważnego tokena JWT
 
 ## Dokumentacja API<br />
